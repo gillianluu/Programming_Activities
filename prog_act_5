@@ -1,0 +1,40 @@
+# Activity 1
+# Asking user for a 3-digit number
+num = int(input("Enter a 3-digit number: "))
+
+first_digit = num // 100
+third_digit = num % 10
+
+# Check if palindrome
+if first_digit == third_digit:
+    print("palindrome!!!!!")
+else:
+    print("not palindrome!")
+
+
+# Activity 2
+num = 2
+total = 0
+
+for i in range(1, 1001):
+    total += 1 / num
+    num *= 2
+
+print("Total", total)
+
+
+# Activity 3
+# Ask for age and weight
+age = int(input("Enter child's age: "))
+weight = int(input("Enter child's weight (in lbs): "))
+
+# Boolean conditions
+age_12_or_more = age >= 12
+age_11_over_90 = age == 11 and weight > 90
+under_11_over_100 = age < 11 and weight > 100
+
+if age_12_or_more or age_11_over_90 or under_11_over_100:
+    print("The child CAN sit in the front seat.")
+else:
+    print("The child CANNOT sit in the front seat.")
+
