@@ -1,0 +1,72 @@
+# Activity 1
+colors = ["Red", "Black", "Pink"]
+for color in colors:
+    print("color:", color)
+
+# Activity 2
+for color in colors:
+    print("color:", color)
+    for letter in color:
+        print("letter:", letter)
+
+
+# Activity 3
+print()
+lst = []
+for i in range(10):
+    lst.append(random.randint(1, 100)) 
+print("lst:", lst)
+
+
+# Activity 4
+print()
+i = 0
+for num in lst:
+    if i > 0:
+        print(lst[i])
+        print(lst[i-1])
+    
+        if lst[i] % 2 == 0 and lst[i-1] % 2 == 0: # check both indexes
+            print("both", lst[i], "and", lst[i-1], "are even")
+    
+        print("--------")
+    i += 1
+
+
+# Activity 5
+file = open("/home/ubuntu/environment/AAPL.txt")
+lines = file.readlines()
+prices = []
+for line in lines:
+    prices.append(float(line))
+
+total_avg = sum(prices) / len(prices)
+print("total_avg:", total_avg)
+five_day_avg = (prices[0] + prices[1] + prices[2] + prices[3] + prices[4]) / 5
+print("five_day_avg:", five_day_avg)
+
+
+# Activity 5.2
+last_four_avg = sum(prices[-4:])/4
+print("last_four_avg:", last_four_avg)
+print()
+i = 0
+buy = 0
+total_profit = 0
+
+for price in prices:
+    if i >= 4: 
+        avg = (prices[i] + prices[i - 1] + prices[i - 2] + prices[i - 3]) / 4
+        if price < avg and buy == 0: 
+            buy = price
+            print("Buying at:", "\t", price)
+        elif price > avg and buy != 0: 
+            trade_profit = price - buy
+            print("Selling at:", "\t", price)
+            print("Trade profit:", "\t", trade_profit)
+            total_profit += trade_profit
+            buy = 0
+            
+    i += 1
+   
+print("total_profit:", "\t", total_profit)
