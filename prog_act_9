@@ -1,0 +1,13 @@
+
+#Programming Activity 1
+name = input("Enter your name: ")
+color = input("Enter your favorite color: ")
+with open("fav_color.txt","w") as file:
+    file.write(name + "'s favorite color is " + color + "\n")
+
+
+
+#Programming Activity 2
+arr = numpy.zeros(100) 
+arr = numpy.random.random(100)
+print("arr:", arr)
