@@ -1,0 +1,41 @@
+# Activity 1
+evens = [i for i in range(2, 101, 2)]
+print("evens list:", evens)
+
+
+# Activity 2
+strings = ["   apple  ", "orange      ", "   grapes  "]
+new_list = [string.strip() for string in strings]
+print(new_list)
+
+
+#Activity 3
+name = input("What is your name: ")
+name = name.upper()
+print("Welcome", name, "!")
+
+
+sentence = ("dude, I just biked down that mountain and at first I was like 
+Whoa, and then I was like Whoa")
+print(sentence)
+sentence = sentence.capitalize()
+
+words = sentence.split(" ")
+
+first_whoa = True 
+i = 0
+for word in words:
+    if words[i] == "whoa" and first_whoa:
+        words[i] = words[i].lower()
+        first_whoa = False 
+    elif words[i] == "whoa" and not first_whoa:
+        words[i] = words[i].upper()
+    else:
+        pass
+    i += 1
+
+new_sentence = ""
+for word in words:
+    new_sentence += " " + word
+
+print(new_sentence)
