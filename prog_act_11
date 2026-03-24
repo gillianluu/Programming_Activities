@@ -1,0 +1,14 @@
+# Activity 1
+message = "My favorite colors are: "
+fav_colors = ["red", "pink", "blue"]
+message += ", ".join(fav_colors) 
+print(message)
+
+
+# Activity 2
+address = input("Enter your address: ")
+address.strip()
+address = address.replace(" ", "")
+address = address.replace(".", "")
+address = address.replace(",", "")
+print("address:", address, address.isalnum())
